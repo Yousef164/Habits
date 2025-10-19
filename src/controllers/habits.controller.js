@@ -39,17 +39,8 @@ exports.updateHabit = async (req, res, next) => {
 
 exports.deleteHabit = async (req, res, next) => {
   try {
-    const result = await habitsModel.deleteHabit(req.params.id);
+    const result = await habitsModel.deleteHabit(req.params.id, req.body.day_id);
     res.status(200).json(result);
-  } catch (error) {
-    next(error);
-  }
-};
-
-exports.addNextWeekHabits = async (req, res, next) => {
-  try {
-    const result = await habitsModel.addNextWeekHabits(req.body.wantToAdd, req.body.day);
-    res.status(201).json(result);
   } catch (error) {
     next(error);
   }

@@ -9,8 +9,5 @@ router
   .put("/:id",    habitsController.updateHabit)
   .delete("/:id", habitsController.deleteHabit);
 
-// هل تريد إضافه عادات اليوم التي تمت الاسبوع القادم ؟
-router
-  .post("/next-week", habitsController.addNextWeekHabits)
   
 module.exports = router;
